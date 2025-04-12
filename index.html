@@ -1,1 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TamLabs.ai – Iterative Design Project</title>
 
+  <!-- Load Inter from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* 
+      ===============================
+      Global Variables & Resets
+      =============================== 
+    */
+    :root {
+      --primary-color: #19612D;        /* TamLabs Green 100% */
+      --secondary-color: #C5D6BF;      /* A lighter green ~25% of #19612D */
+      --font-base: "Inter", sans-serif;
+      --font-size-base: 14px;
+      --text-color: #333333;
+      --bg-color: #f9f9f9;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0; 
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: var(--font-size-base);
+    }
+
+    body {
+      font-family: var(--font-base);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #0b3d1c; /* Slightly darker green on hover */
+    }
+
+    /* 
+      ===============================
+      Header Styling
+      =============================== 
+    */
+    header {
+      background: linear-gradient(135deg, var(--primary-color) 0%, #0f3c1c 100%);
+      color: var(--white);
+      padding: 3rem 1rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    /*
+      ===============================
+      Container
+      =============================== 
+    */
+    .container {
+      width: 90%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding-bottom: 2rem;
+    }
+
+    /*
+      ===============================
+      Section & Headings
+      =============================== 
+    */
+    section {
+      margin-bottom: 2rem;
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      padding-bottom: 0.25rem;
+      border-bottom: 3px solid var(--primary-color);
+      color: #222;
+    }
+
+    /*
+      ===============================
+      Team Section
+      =============================== 
+    */
+    #team-members ul {
+      list-style: none;
+      margin-top: 1rem;
+      padding-left: 0;
+    }
+    #team-members li {
+      margin: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    #team-members li::before {
+      content: "•";
+      color: var(--primary-color);
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+      top: 0.2rem;
+    }
+
+    /*
+      ===============================
+      Member Sketches
+      =============================== 
+    */
+    .member-sketches {
+      background-color: var(--white);
+      padding: 1rem;
+      border-left: 6px solid var(--primary-color);
+      margin: 1rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-radius: 4px;
+    }
+    .member-sketches h3 {
+      font-weight: 500;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    /*
+      ===============================
+      Wireframe Details
+      ===============================
+    */
+    .wireframe-details {
+      background-color: var(--white);
+      padding: 1rem;
+      border: 1px solid #e1e1e1;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin: 1rem 0;
+    }
+    .wireframe-details h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: var(--primary-color);
+    }
+
+    /*
+      ===============================
+      Wireframe Gallery
+      ===============================
+    */
+    .wireframe-gallery {
+      display: flex;
+      flex-wrap: wrap;         /* Allows images to wrap on smaller screens */
+      gap: 1rem;               /* Spacing between figure elements */
+      justify-content: center; /* Center images horizontally */
+      margin-top: 1rem;
+    }
+
+    .wireframe-gallery figure {
+      text-align: center;
+      max-width: 300px;
+      flex: 1 1 auto;
+      cursor: pointer;         /* Show pointer to hint click action */
+    }
+
+    .wireframe-gallery img {
+      width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      display: block;
+      margin: 0 auto 0.5rem;
+    }
+
+    .wireframe-gallery figcaption {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /*
+      ===============================
+      Loom Video Section
+      =============================== 
+    */
+    .loom-video {
+      background-color: var(--secondary-color);
+      border-left: 4px solid var(--primary-color);
+      padding: 1rem;
+      border-radius: 4px;
+      margin: 1rem 0;
+    }
+    .loom-video h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: var(--primary-color);
+    }
+
+    /*
+      ===============================
+      Button Styles
+      =============================== 
+    */
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: var(--white);
+      margin-top: 1rem;           /* Adds vertical space from preceding text */
+      padding: 1rem 1.5rem;       /* Increased padding for a larger button */
+      font-size: 1rem;            /* Larger text */
+      font-weight: 600;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .btn:hover {
+      background-color: #145021;
+      transform: translateY(-2px);
+    }
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-light {
+      background-color: var(--secondary-color);
+      color: var(--primary-color);
+    }
+    .btn-light:hover {
+      background-color: #a8c9a7; /* slightly darker version of secondary for hover */
+    }
+
+    /*
+      ===============================
+      Example Toggle Switch
+      =============================== 
+    */
+    .toggle-switch {
+      position: relative;
+      width: 50px;
+      height: 26px;
+      display: inline-block;
+      margin-right: 1rem;
+    }
+    .toggle-switch input {
+      display: none;
+    }
+    .toggle-slider {
+      position: absolute;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      background-color: #ccc;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .toggle-slider::before {
+      content: "";
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      left: 3px;
+      bottom: 3px;
+      background-color: var(--white);
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    .toggle-switch input:checked + .toggle-slider {
+      background-color: var(--primary-color);
+    }
+    .toggle-switch input:checked + .toggle-slider::before {
+      transform: translateX(24px);
+    }
+
+    /*
+      ===============================
+      Example Icon Styles
+      (For actual icons, you might 
+      use <img>, <svg>, or an icon 
+      library.)
+      =============================== 
+    */
+    .icon-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 4px;
+      background-color: var(--primary-color);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--white);
+      margin-right: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .icon-btn:hover {
+      background-color: #145021;
+      transform: scale(1.05);
+    }
+    .icon {
+      font-size: 1.2rem;
+    }
+
+    /*
+      ===============================
+      Fullscreen Modal for Images
+      =============================== 
+    */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0; 
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;           /* Hidden by default */
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .modal-overlay.show {
+      display: flex;           /* Show when triggered */
+    }
+    .modal-content {
+      position: relative;
+      max-width: 80%;
+      max-height: 80%;
+      margin: 0 auto;
+    }
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    }
+    .close-modal {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      font-size: 2rem;
+      color: var(--white);
+      cursor: pointer;
+      font-weight: bold;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+    }
+    .close-modal:hover {
+      opacity: 1;
+    }
+
+    /*
+      ===============================
+      Footer
+      =============================== 
+    */
+    footer {
+      background-color: var(--primary-color);
+      color: var(--white);
+      text-align: center;
+      padding: 1rem;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+
+    /* 
+      ===============================
+      Responsive 
+      ===============================
+    */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+      .container {
+        width: 95%;
+      }
+      .wireframe-gallery figure {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>TamLabs.ai – Iterative Design Project</h1>
+    <p>Brown University CS1300</p>
+  </header>
+
+  <div class="container">
+
+    <!-- PROJECT OVERVIEW -->
+    <section id="project-overview">
+      <h2>Project Overview</h2>
+      <p>
+        Our team worked on an unguided project for <strong>TamLabs.ai</strong>, a startup offering
+        an AI Copilot for Microsoft Word. This project followed our course’s iterative design process:
+        (1) Sketching, (2) Wireframing, (3) Critique, and (4) Hi-Fi Prototype & Testing.
+      </p>
+      <p>
+        We aimed to design a multi-screen, interactive prototype showing how the interface could help users
+        draft and refine documents directly in Word.
+      </p>
+      
+      <!-- Enlarged Button Linking to Figma -->
+      <a 
+        href="https://www.figma.com/design/3rJhKpUEPrutKq2LeEGTzV/Iterative-Design---TamLabs?node-id=0-1&t=phshK3IbOEquzAZk-1" 
+        class="btn" 
+        target="_blank"
+      >
+        View Figma Prototype
+      </a>
+    </section>
+
+    <!-- TEAM MEMBERS -->
+    <section id="team-members">
+      <h2>Meet the Team</h2>
+      <ul>
+        <li><strong>Ali McCintyire:</strong> photo / bio</li>
+        <li><strong>Andrew Herring:</strong> photo / bio</li>
+        <li><strong>Maria Chavez Zapata:</strong> photo / bio</li>
+        <li><strong>Rowe Stodolnic:</strong> photo / bio</li>
+      </ul>
+    </section>
+
+    <!-- STARTUP CONTEXT -->
+    <section id="startup-context">
+      <h2>About TamLabs</h2>
+      <p>
+        TamLabs focuses on integrating Large Language Models into Microsoft Word 
+        as a writing assistant for automation and efficiency. Our design challenge: 
+        <em>How can we incorporate AI-driven suggestions and editing into the user’s writing flow</em> 
+        with minimal disruption to the familiar Word environment?
+      </p>
+    </section>
+
+    <!-- PART 2: SKETCHING & WIREFRAMING -->
+    <section id="sketching-wireframing">
+      <h2>Sketching & Wireframing</h2>
+      <p>
+        Each team member explored diverse layouts and functionalities for the TamLabs interface. 
+        We combined our top ideas into a low-fidelity wireframe, focusing on three core screens:
+      </p>
+
+      <!-- Member Sketches -->
+      <article class="member-sketches">
+        <h3>Ali's Sketches</h3>
+        <p>
+          Explored a sidebar-based suggestion panel with an inline chat prompt for direct AI interaction.
+        </p>
+      </article>
+
+      <article class="member-sketches">
+        <h3>Andrew's Sketches</h3>
+        <p>
+          Emphasized a simple toggle to enable/disable the Copilot, plus a “rewrite” button for quick 
+          AI rewrites of selected text.
+        </p>
+      </article>
+
+      <article class="member-sketches">
+        <h3>Maria's Sketches</h3>
+        <p>
+          Proposed a “document status” overview, showing revision history and 
+          AI-generated suggestions in a collapsible timeline.
+        </p>
+      </article>
+
+      <article class="member-sketches">
+        <h3>Rowe's Sketches</h3>
+        <p>
+          Focused on user onboarding: an initial setup screen to gather user preferences 
+          (formal vs. casual tone, language style, etc.).
+        </p>
+      </article>
+
+      <div class="wireframe-details">
+        <h3>Low-Fidelity Wireframe using Balsamiq</h3>
+        <p>
+          Merging our favorite elements into a cohesive design, we created a wireframe 
+          with three main screens:
+        </p>
+
+        <!-- Gallery of wireframe images -->
+        <div class="wireframe-gallery">
+          <figure>
+            <img src="Assets/SettingsWireFrame.png" alt="Settings Wireframe" />
+            <figcaption>Settings Screen</figcaption>
+          </figure>
+          <figure>
+            <img src="Assets/LoginWireFrame.png" alt="Login Wireframe" />
+            <figcaption>Login Screen</figcaption>
+          </figure>
+          <figure>
+            <img src="Assets/CopilotWireFrame.png" alt="Copilot Wireframe" />
+            <figcaption>Copilot Screen</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="loom-video">
+        <h3>Wireframe Demo Video</h3>
+        <p>
+          Watch our brief Loom walkthrough:
+          <a href="#" target="_blank">Link to Wireframe Loom Video</a>
+        </p>
+      </div>
+
+      <!-- Example of Toggles & Icons from the style guide -->
+      <div>
+        <p><strong>Sample Controls (styled via Style Guide):</strong></p>
+        <label class="toggle-switch">
+          <input type="checkbox" checked>
+          <span class="toggle-slider"></span>
+        </label>
+        <div class="icon-btn" title="Next">
+          <span class="icon">▶</span>
+        </div>
+        <div class="icon-btn" title="Refresh">
+          <span class="icon">⟳</span>
+        </div>
+        <div class="icon-btn" title="Check">
+          <span class="icon">✔</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- (Add additional sections for Critique, Hi-Fi Prototype, User Testing, etc.) -->
+
+  </div><!-- /.container -->
+
+  <footer>
+    <p>&copy; 2025 Team TamLabs. All rights reserved.</p>
+  </footer>
+
+  <!-- Fullscreen Modal for enlarging images -->
+  <div id="image-modal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <img id="modal-image" src="" alt="Enlarged Wireframe"/>
+    </div>
+  </div>
+
+  <script>
+    // Grab all images in the wireframe gallery
+    const galleryImages = document.querySelectorAll('.wireframe-gallery img');
+    const modalOverlay = document.getElementById('image-modal');
+    const modalImage = document.getElementById('modal-image');
+    const closeBtn = document.querySelector('.close-modal');
+
+    // Function to show modal with the clicked image
+    galleryImages.forEach(image => {
+      image.addEventListener('click', () => {
+        modalOverlay.classList.add('show');
+        modalImage.src = image.src;
+        modalImage.alt = image.alt;
+      });
+    });
+
+    // Close modal on '×' click
+    closeBtn.addEventListener('click', () => {
+      modalOverlay.classList.remove('show');
+    });
+
+    // Close modal when clicking outside the image
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+        modalOverlay.classList.remove('show');
+      }
+    });
+
+    // Close modal on pressing 'Esc'
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        modalOverlay.classList.remove('show');
+      }
+    });
+  </script>
+
+</body>
+</html>
