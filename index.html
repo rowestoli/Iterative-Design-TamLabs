@@ -174,7 +174,7 @@
     */
     .wireframe-gallery {
       display: flex;
-      flex-wrap: wrap;         /* Allows images to wrap on smaller screens */
+      flex-wrap: nowrap;         /* Allows images to wrap on smaller screens */
       gap: 1rem;               /* Spacing between figure elements */
       justify-content: center; /* Center images horizontally */
       margin-top: 1rem;
@@ -188,6 +188,24 @@
     }
 
     .wireframe-gallery img {
+      width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      display: block;
+      margin: 0 auto 0.5rem;
+    }
+
+    img.img2 {
+      width: 90%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      display: block;
+      margin: 0 auto 0.5rem;
+    }
+
+    img.img3 {
       width: 100%;
       height: auto;
       border: 1px solid #ccc;
@@ -441,7 +459,7 @@
     <section id="team-members">
       <h2>Meet the Team</h2>
       <ul>
-        <li><strong>Ali McCintyire:</strong> photo / bio</li>
+        <li><strong>Ali McIntyre:</strong> photo / bio</li>
         <li><strong>Andrew Herring:</strong> photo / bio</li>
         <li><strong>Maria Chavez Zapata:</strong> photo / bio</li>
         <li><strong>Rowe Stodolnic:</strong> photo / bio</li>
@@ -473,6 +491,20 @@
         <p>
           Explored a sidebar-based suggestion panel with an inline chat prompt for direct AI interaction.
         </p>
+        <div class="wireframe-gallery">
+          <figure>
+              <img src="Assets/ali_sketches/ali_login_page.png" alt="Login page" />
+              <figcaption>Sign in / Sign up</figcaption>
+            </figure>
+            <figure>
+              <img src="Assets/ali_sketches/ali_settings.png" alt="Settings page" />
+              <figcaption>Settings</figcaption>
+            </figure>
+            <figure>
+              <img src="Assets/ali_sketches/ali_copilot.png" alt="Copilot page" />
+              <figcaption>Copilot</figcaption>
+            </figure>
+        </div>
       </article>
 
       <article class="member-sketches">
@@ -481,6 +513,24 @@
           Emphasized a simple toggle to enable/disable the Copilot, plus a “rewrite” button for quick 
           AI rewrites of selected text.
         </p>
+        <div class="wireframe-gallery">
+          <figure>
+              <img class='img2' src="Assets/andrew_sketches/signin_signup.png" alt="Login page" />
+              <figcaption>Sign in / Sign up</figcaption>
+            </figure>
+            <figure>
+              <img class='img2' src="Assets/andrew_sketches/chatbox_settings.png" alt="Settings page" />
+              <figcaption>Chatbox / Settings</figcaption>
+            </figure>
+            <figure>
+              <img class='img2' src="Assets/andrew_sketches/work_doc.png" alt="working document page" />
+              <figcaption>Working Doc</figcaption>
+            </figure>
+            <figure>
+              <img class='img2' src="Assets/andrew_sketches/Copilot.png" alt="Copilot page" />
+              <figcaption>Copilot</figcaption>
+            </figure>
+        </div>
       </article>
 
       <article class="member-sketches">
@@ -489,6 +539,20 @@
           Proposed a “document status” overview, showing revision history and 
           AI-generated suggestions in a collapsible timeline.
         </p>
+        <div class="wireframe-gallery">
+        <figure>
+              <img class='img3' src="Assets/maria_sketches/signin_signup.png" alt="Login page" />
+              <figcaption>Sign in / Sign up</figcaption>
+            </figure>
+            <figure>
+              <img class='img3' src="Assets/maria_sketches/proj_manager.png" alt="project manager page" />
+              <figcaption>Project Organizer</figcaption>
+            </figure>
+            <figure>
+              <img class='img3' src="Assets/maria_sketches/copilot.png" alt="Copilot page" />
+              <figcaption>Copilot</figcaption>
+            </figure>
+            </div>
       </article>
 
       <article class="member-sketches">
@@ -497,6 +561,20 @@
           Focused on user onboarding: an initial setup screen to gather user preferences 
           (formal vs. casual tone, language style, etc.).
         </p>
+        <div class="wireframe-gallery">
+        <figure>
+              <img class='img3' src="Assets/rowe_sketches/signin_signup.png" alt="Login page" />
+              <figcaption>Sign in / Sign up</figcaption>
+            </figure>
+            <figure>
+              <img class='img3' src="Assets/rowe_sketches/365_auth.png" alt="365 auth" />
+              <figcaption>365 Authentification</figcaption>
+            </figure>
+            <figure>
+              <img class='img3' src="Assets/rowe_sketches/copilot.png" alt="Copilot page" />
+              <figcaption>Copilot</figcaption>
+            </figure>
+            </div>
       </article>
 
       <div class="wireframe-details">
