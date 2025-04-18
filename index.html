@@ -679,68 +679,51 @@
 
       <!-- Task Scenarios -->
       <article class="testing-phase">
-        <h3>Tasks with TamLabs</h3>
-        <ol>
-          <li>
-            <strong>Bulk replace:</strong>
-            “Use TamLabs to change all instances of ‘clients’ to ‘customers’.”  
-            <em>Tests large‑scale editing; measure task completion and accuracy.</em>
-          </li>
-          <li>
-            <strong>Grammar upgrade:</strong>
-            “This paragraph sounds awkward. Improve its grammar and clarity.”  
-            <em>Checks core editing capability; record success rate.</em>
-          </li>
-          <li>
-            <strong>Tonal rewrite:</strong>
-            “This email is too formal. Rewrite in a friendlier tone.”  
-            <em>Evaluates tone control; gather user perception.</em>
-          </li>
-          <li>
-            <strong>Summarization:</strong>
-            “Summarize this paragraph into one sentence.”  
-            <em>Assesses summary accuracy and readability.</em>
-          </li>
-          <li>
-            <strong>Professional tailoring:</strong>
-            “You’re applying as a data analyst. Tailor this resume bullet point.”  
-            <em>Tests domain‑specific rewriting; judge alignment with role.</em>
-          </li>
-          <li>
-            <strong>Undo function:</strong>
-            “You accepted an edit you didn’t like. Undo or revert it.”  
-            <em>Checks rollback feature; track intuitiveness.</em>
-          </li>
-          <li>
-            <strong>Review changes:</strong>
-            “After edits, review what was changed—accept or reject.”  
-            <em>Validates change‑review UI; measure ease of use.</em>
-          </li>
-        </ol>
+        <h3>Task with TamLabs</h3>
+
+          We asked our users to do the following sequence of tasks:
+            <ul><li>Sign in to Tamlabs</li> 
+              <li>Open a project</li> 
+              <li>Interact with the copilot</li>
+                <li>Suggest edits and review Tamlabs’s suggestions.</li>
+              </ul>
+
       </article>
 
       <!-- Observer Prompts -->
       <article class="testing-phase">
         <h3>Observer Questions</h3>
+        <ol>
+          <li>“Was there anything misleading about our prototype?”</li>
+          <li>“Was the user flow expected or unexpected?”</li>
+          <li>““What was the most frustrating part of using our prototype?”</li>
+          <li>“What did you enjoy the most?”</li>
+          <li>“If you could improve one thing about it, what would it be?”</li>
+        </ol>
+      </article>
+
+      <article class="testing-phase">
+        <h3>Post‑Test Observations</h3>
         <ul>
-          <li>“Can you walk me through what you’re thinking as you do this?”</li>
-          <li>“What made you choose that phrasing for the command?”</li>
-          <li>“Was the result what you expected? Why or why not?”</li>
-          <li>“Would you have trusted this edit in a real document?”</li>
-          <li>“On a scale of 1–5, how confident do you feel using this feature?”</li>
+          <li>Many users had trouble distinguishing what was clickable and what was not. (Since not all buttons are currently connected to active pages)</li>
+          <li>All users were eventually able to complete the task.</li>
+          <li>One of the users was colorblind and was able to navigate our prototype wihtout trouble.</li>
+          <li>Some users were confused if they should be pressing "Login" or "Sign Up" to enter the platform.</li>
+          <li>Some users had trouble interacting with the Copilot (did not know where to press, or tried typing in the keyboard).</li>
+        
         </ul>
       </article>
 
       <!-- Post‑Test Feedback -->
       <article class="testing-phase">
-        <h3>Post‑Test Questions</h3>
-        <ul>
-          <li>“What was the most frustrating part of using TamLabs?”</li>
-          <li>“What did you enjoy the most?”</li>
-          <li>“Would you use this for your work? Why or why not?”</li>
-          <li>“What kind of tasks would you not trust it for?”</li>
-          <li>“If you could improve one thing about it, what would it be?”</li>
-        </ul>
+        <h3>Summary of User Responses</h3>
+        <ol>
+          <li>The difference in placement of back arrows was a little misleading (sometimes it is on the top left corner and sometimes it is on the bottom in words). It was also a little confusing that the "New Project" button was not clickable and that you had to click the documents instead.</li>
+          <li>The user flow was generally pretty expected and smooth, but some users did not expect a whole new screen when they clicked the "See Revisions" button on the copilot screen.</li>
+          <li>The most frustrating thing about the prototype is how the currently clickable buttons are not highlighted differently from the unclickable elements, making it a little harder for users to complete the task.</li>
+          <li>The users enjoyed how every page was reachable and how they were easily informed on what TamLabs actually does. The functionality of the real product is very clear from this prototype.</li>
+          <li>Some suggestions given by the users who tested our prototype to improve it were to add more a different color scheme to be able to distinguish when a document is being edited directly through Word or if you are on the TamLabs extension. In addition, it was suggested that we show exactly how a document would be changed if the revisions are accepted. It was also suggested that the "New Project" and more important buttons were empphasized more heavily to standout.</li>
+        </ol>
       </article>
     </section>
 
