@@ -175,8 +175,8 @@
     .wireframe-gallery {
       display: flex;
       flex-wrap: nowrap;         /* Allows images to wrap on smaller screens */
-      gap: 1rem;               /* Spacing between figure elements */
-      justify-content: center; /* Center images horizontally */
+      gap: 1rem;                 /* Spacing between figure elements */
+      justify-content: center;   /* Center images horizontally */
       margin-top: 1rem;
     }
 
@@ -184,7 +184,7 @@
       text-align: center;
       max-width: 300px;
       flex: 1 1 auto;
-      cursor: pointer;         /* Show pointer to hint click action */
+      cursor: pointer;           /* Show pointer to hint click action */
     }
 
     .wireframe-gallery img {
@@ -259,9 +259,6 @@
       background-color: #145021;
       transform: translateY(-2px);
     }
-    .btn:active {
-      transform: translateY(0);
-    }
 
     .btn-light {
       background-color: var(--secondary-color);
@@ -316,10 +313,6 @@
     /*
       ===============================
       Example Icon Styles
-      (For actual icons, you might 
-      use <img>, <svg>, or an icon 
-      library.)
-      =============================== 
     */
     .icon-btn {
       width: 36px;
@@ -345,7 +338,6 @@
     /*
       ===============================
       Fullscreen Modal for Images
-      =============================== 
     */
     .modal-overlay {
       position: fixed;
@@ -392,7 +384,6 @@
     /*
       ===============================
       Footer
-      =============================== 
     */
     footer {
       background-color: var(--primary-color);
@@ -400,7 +391,6 @@
       text-align: center;
       padding: 1rem;
     }
-
     footer p {
       font-size: 0.9rem;
     }
@@ -420,6 +410,43 @@
       .wireframe-gallery figure {
         max-width: 100%;
       }
+    }
+
+    /* 
+      ===============================
+      User Testing Section
+      =============================== 
+    */
+    #user-testing {
+      background-color: var(--white);
+      padding: 2rem 1rem;
+      border-left: 6px solid var(--secondary-color);
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-radius: 4px;
+    }
+    #user-testing h2 {
+      font-size: 1.6rem;
+      color: var(--primary-color);
+      display: inline-block;
+      padding-bottom: 0.25rem;
+      border-bottom: 3px solid var(--secondary-color);
+      margin-bottom: 1.5rem;
+    }
+    .testing-phase {
+      margin-bottom: 1.5rem;
+    }
+    .testing-phase h3 {
+      font-size: 1.25rem;
+      color: var(--primary-color);
+      margin-bottom: 0.75rem;
+    }
+    .testing-phase ul,
+    .testing-phase ol {
+      padding-left: 1.5rem;
+    }
+    .testing-phase li {
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
@@ -568,7 +595,7 @@
             </figure>
             <figure>
               <img class='img3' src="Assets/rowe_sketches/365_auth.png" alt="365 auth" />
-              <figcaption>365 Authentification</figcaption>
+              <figcaption>365 Authentication</figcaption>
             </figure>
             <figure>
               <img class='img3' src="Assets/rowe_sketches/copilot.png" alt="Copilot page" />
@@ -584,7 +611,6 @@
           with three main screens:
         </p>
 
-        <!-- Gallery of wireframe images -->
         <div class="wireframe-gallery">
           <figure>
             <img src="Assets/SettingsWireFrame.png" alt="Settings Wireframe" />
@@ -604,7 +630,7 @@
       <div class="loom-video">
         <h3>Wireframe Demo Video</h3>
         <p>
-          Watch our Loom high fidelity ptototype demo:
+          Watch our Loom high fidelity prototype demo:
           <a 
             href="https://www.loom.com/share/b4a39f27aa16453e9490204f5635b6c7?sid=c5fa3a84-234a-4256-81c6-d75b26d3a473" 
             target="_blank"
@@ -614,7 +640,6 @@
         </p>
       </div>
 
-      <!-- Example of Toggles & Icons from the style guide -->
       <div>
         <p><strong>Sample Controls (styled via Style Guide):</strong></p>
         <label class="toggle-switch">
@@ -634,7 +659,90 @@
 
     </section>
 
-    <!-- (Add additional sections for Critique, Hi-Fi Prototype, User Testing, etc.) -->
+    <!-- USER TESTING -->
+    <section id="user-testing">
+      <h2>User Testing</h2>
+
+      <!-- Pre-Test Checklist -->
+      <article class="testing-phase">
+        <h3>Pre‑Test</h3>
+        <ul>
+          <li>Set up the environment</li>
+          <li>Obtain consent; provide consent form</li>
+          <li>Explain we’re evaluating the software, not the user</li>
+          <li>Ask them not to discuss the test with others</li>
+          <li>Remind they can stop at any time</li>
+          <li>Assure responses are anonymous</li>
+          <li>Invite any questions before beginning</li>
+        </ul>
+      </article>
+
+      <!-- Task Scenarios -->
+      <article class="testing-phase">
+        <h3>Tasks with TamLabs</h3>
+        <ol>
+          <li>
+            <strong>Bulk replace:</strong>
+            “Use TamLabs to change all instances of ‘clients’ to ‘customers’.”  
+            <em>Tests large‑scale editing; measure task completion and accuracy.</em>
+          </li>
+          <li>
+            <strong>Grammar upgrade:</strong>
+            “This paragraph sounds awkward. Improve its grammar and clarity.”  
+            <em>Checks core editing capability; record success rate.</em>
+          </li>
+          <li>
+            <strong>Tonal rewrite:</strong>
+            “This email is too formal. Rewrite in a friendlier tone.”  
+            <em>Evaluates tone control; gather user perception.</em>
+          </li>
+          <li>
+            <strong>Summarization:</strong>
+            “Summarize this paragraph into one sentence.”  
+            <em>Assesses summary accuracy and readability.</em>
+          </li>
+          <li>
+            <strong>Professional tailoring:</strong>
+            “You’re applying as a data analyst. Tailor this resume bullet point.”  
+            <em>Tests domain‑specific rewriting; judge alignment with role.</em>
+          </li>
+          <li>
+            <strong>Undo function:</strong>
+            “You accepted an edit you didn’t like. Undo or revert it.”  
+            <em>Checks rollback feature; track intuitiveness.</em>
+          </li>
+          <li>
+            <strong>Review changes:</strong>
+            “After edits, review what was changed—accept or reject.”  
+            <em>Validates change‑review UI; measure ease of use.</em>
+          </li>
+        </ol>
+      </article>
+
+      <!-- Observer Prompts -->
+      <article class="testing-phase">
+        <h3>Observer Questions</h3>
+        <ul>
+          <li>“Can you walk me through what you’re thinking as you do this?”</li>
+          <li>“What made you choose that phrasing for the command?”</li>
+          <li>“Was the result what you expected? Why or why not?”</li>
+          <li>“Would you have trusted this edit in a real document?”</li>
+          <li>“On a scale of 1–5, how confident do you feel using this feature?”</li>
+        </ul>
+      </article>
+
+      <!-- Post‑Test Feedback -->
+      <article class="testing-phase">
+        <h3>Post‑Test Questions</h3>
+        <ul>
+          <li>“What was the most frustrating part of using TamLabs?”</li>
+          <li>“What did you enjoy the most?”</li>
+          <li>“Would you use this for your work? Why or why not?”</li>
+          <li>“What kind of tasks would you not trust it for?”</li>
+          <li>“If you could improve one thing about it, what would it be?”</li>
+        </ul>
+      </article>
+    </section>
 
   </div><!-- /.container -->
 
